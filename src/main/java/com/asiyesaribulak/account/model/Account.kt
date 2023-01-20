@@ -15,7 +15,7 @@ data class Account(
         val balance: BigDecimal?= BigDecimal.ZERO,
         val creationDate: LocalDateTime,
 
-        @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])
+        @ManyToOne(fetch = FetchType.LAZY, cascade = [CascadeType.ALL])//lazy döngüye girmesine izin vermez account biblgisi geldikten sonra customer doldur anlamında mesela
        @JoinColumn(name = "customer_id", nullable = false)
        val customer: Customer?,
 
