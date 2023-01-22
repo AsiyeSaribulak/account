@@ -15,6 +15,7 @@ data class Customer(
         @OneToMany(mappedBy = "customer", fetch = FetchType.LAZY)
         val account: Set<Account>?
 ) {
+        constructor(name: String, surname: String) : this("", name, surname, HashSet())
         override fun equals(other: Any?): Boolean {
                 if(this===other) return true
                 if(javaClass !=other?.javaClass) return false
